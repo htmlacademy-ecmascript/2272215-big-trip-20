@@ -1,7 +1,7 @@
 # Проект «Большое путешествие»
 
 * Студент: [Lenara](https://up.htmlacademy.ru/ecmascript/20/user/2272215).
-* Наставник: `Неизвестно`.
+* Наставник: [Глеб Клецков](https://htmlacademy.ru/profile/id1487865).
 
 ---
 
