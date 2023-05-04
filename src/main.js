@@ -1,3 +1,3 @@
-import AppPresenter from './presenter/app-presenter';
+import { AppPresenter } from './presenter/app-presenter';
 
 (new AppPresenter()).init();

@@ -1,19 +1,20 @@
 import { createElement } from '../../render';
-import { createSortTemplate } from './template';
+import { getEventTemplate } from './template';
 
-export class SortView {
+export class Event {
   constructor() {
     this.element = null;
   }
 
-  getTemplate() {
-    return createSortTemplate();
+  getTempalte () {
+    return getEventTemplate();
   }
 
   getElement() {
     if(!this.element) {
-      this.element = createElement(this.getTemplate());
+      this.element = createElement(this.getTempalte());
     }
+
     return this.element;
   }
 

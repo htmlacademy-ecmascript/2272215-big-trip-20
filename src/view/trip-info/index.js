@@ -1,19 +1,20 @@
 import { createElement } from '../../render';
-import { createSortTemplate } from './template';
+import { getTripInfoTemplate } from './template';
 
-export class SortView {
+export class TripInfo {
   constructor() {
     this.element = null;
   }
 
   getTemplate() {
-    return createSortTemplate();
+    return getTripInfoTemplate();
   }
 
   getElement() {
     if(!this.element) {
       this.element = createElement(this.getTemplate());
     }
+
     return this.element;
   }
 
