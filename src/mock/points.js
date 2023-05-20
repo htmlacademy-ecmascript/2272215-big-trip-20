@@ -1,16 +1,13 @@
 import { dayjs, getRandomInteger, generateRandomUniqueNumbers, formatToServerDateString } from '../utils';
 import { POINT_COUNT, POINTS_TYPES } from './constants';
-import { getRandomOfferItems } from './offers';
-import { DestinationsMock } from './destinations';
 import { getBasePrice, getDateTo } from './utils';
 
-export function getRandomPoints() {
+export function getRandomPoints(destinations, offersItems) {
   const points = [];
   const pointTypes = Object.values(POINTS_TYPES);
   const randomDayOffset = getRandomInteger(0, 5);
   let randomDay = dayjs().add(randomDayOffset, 'day');
-  const allOffersItems = getRandomOfferItems();
-
+  
   for(let i = 0; i < POINT_COUNT; i++) {
     const randomIndex = getRandomInteger(0, pointTypes.length - 1);
     const randomPointType = pointTypes[randomIndex];
@@ -23,13 +20,13 @@ export function getRandomPoints() {
     const dateTo = formatToServerDateString(randomDay);
 
     // Destination generation
-    const randomDestinationIndex = getRandomInteger(0, DestinationsMock.length - 1);
-    const destination = DestinationsMock[randomDestinationIndex];
+    const randomDestinationIndex = getRandomInteger(0, destinations.length - 1);
+    const destination = destinations[randomDestinationIndex];
 
     // Offers generation
     let pointOffers = [];
     let offersIds = [];
-    const pointOffersItem = allOffersItems.find((item) => item.type === randomPointType);
+    const pointOffersItem = offersItems.find((item) => item.type === randomPointType);
     if(pointOffersItem) {
       pointOffers = pointOffersItem.offers;
     }
