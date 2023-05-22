@@ -2,12 +2,19 @@ import { createElement } from '../../render';
 import { getEventTemplate } from './template';
 
 export class Event {
-  constructor() {
+  constructor({ point, destination, offers }) {
     this.element = null;
+    this.point = point;
+    this.destination = destination;
+    this.offers = offers;
   }
 
   getTempalte () {
-    return getEventTemplate();
+    return getEventTemplate({
+      point: this.point,
+      destination: this.destination,
+      offers: this.offers,
+    });
   }
 
   getElement() {
