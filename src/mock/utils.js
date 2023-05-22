@@ -1,4 +1,4 @@
-import { getRandomInteger, generateRandomUniqueNumbers, dayjs } from '../utils';
+import { getRandomInteger, generateRandomUniqueNumbers } from '../utils';
 import {
   DESTINATION_DESCRIPTIONS,
   DESTINATION_DESCRIPTIONS_COUNT,

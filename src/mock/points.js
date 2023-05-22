@@ -7,7 +7,7 @@ export function getRandomPoints(destinations, offersItems) {
   const pointTypes = Object.values(POINTS_TYPES);
   const randomDayOffset = getRandomInteger(0, 5);
   let randomDay = dayjs().add(randomDayOffset, 'day');
-  
+
   for(let i = 0; i < POINT_COUNT; i++) {
     const randomIndex = getRandomInteger(0, pointTypes.length - 1);
     const randomPointType = pointTypes[randomIndex];
