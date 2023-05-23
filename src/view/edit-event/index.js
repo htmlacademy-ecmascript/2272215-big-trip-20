@@ -2,12 +2,19 @@ import { createElement } from '../../render';
 import { getEventsEditTemplate } from './template';
 
 export class EditEvent {
-  constructor() {
+  constructor({ point, destinations, pointOffers }) {
     this.element = null;
+    this.point = point;
+    this.destinations = destinations;
+    this.pointOffers = pointOffers;
   }
 
   getTemplate() {
-    return getEventsEditTemplate();
+    return getEventsEditTemplate({
+      point: this.point,
+      destinations: this.destinations,
+      pointOffers: this.pointOffers,
+    });
   }
 
   getElement() {
